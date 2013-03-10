@@ -1,0 +1,29 @@
+
+<div class="explainbox">
+	<p>Welcome <strong><%= @user.name %></strong>. Please make your choices.
+	<ul>
+		<li>Choosing a person more than once will only count once.</li>
+		<li>Choices are not ranked in order (all have equal weight).</li>
+		<li>You do not need to fill out all 10 choices.</li>
+	</ul>
+	</p>
+</div>
+<form method="post" action="<%= chosen_path %>">
+<% (0..9).each do |i| %>
+  <div class="choicebox">
+		<h2>Choice <%= i+1 %></h2>
+		<select name="choice_<%= i %>">
+		  <option value="0">No Choice</option>
+		  <% @options.each do |o| %>
+		    <option value='<%= o.id %>'<% if @user.try("choice_#{i+1}") == o.id %> selected='selected'<% end %>><%= o.name %></option>
+		  <% end %>
+	  </select>
+	</div>
+<% end %>
+<div class="choicebox">
+	<p>Choices can be re-submitted as many times as you want, just use the link we
+sent you in your email. Each time the "Sumit Choices" button is pressed, all your
+previous choices will be overwritten.</p>
+<input type="submit" value="Submit Choices" class="btn btn-large">
+</div>
+</form>

@@ -1,0 +1,8 @@
+%h2= "students who have submitted choices (#{@students_with_choices.length})"
+%ul
+  - @students_with_choices.each do |s|
+    %li= "#{s.name} (#{s.choices.length} choices)"
+%h2= "students who have signed in but have not submitted choices (#{@students_without_choices.length})"
+%ul
+  - @students_without_choices.each do |s|
+    %li= s.name
