@@ -64,6 +64,7 @@ GEM
     mime-types (1.21)
     multi_json (1.6.1)
     multipart-post (1.2.0)
+    newrelic_rpm (3.5.8.72)
     oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -140,6 +141,7 @@ DEPENDENCIES
   coffee-rails
   jquery-rails
   kaminari
+  newrelic_rpm
   pg
   rails (= 3.2.12)
   rails-settings-cached

@@ -8,6 +8,7 @@ gem 'sorcery'
 gem 'typus'
 gem 'unicorn'
 gem "rails-settings-cached"
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'coffee-rails'
